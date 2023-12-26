@@ -1,0 +1,96 @@
+/* css for nav bar */
+.nav{
+    background-color: blueviolet;
+    height: 55px;
+    align-items: center;
+    color: white;
+    font-size: larger;
+    font-weight: 500;
+}
+.nav>button{
+    background: transparent;
+    border: none;
+    margin-right: 10px;
+}
+.nav>button>svg{
+    width: 45px;
+    height: 45px;
+}
+
+
+/* css for student login  */
+.studentlogin{
+    color: blueviolet;
+    height: 20%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.studentlogin>span{
+    width: 270px;
+}
+.studentlogin>span>button{
+    display: flex;
+    width: 100%;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 20px;
+    border-radius: 15px;
+    background-color: transparent;
+    margin-top: 10px;
+}
+.studentlogin>span>button>svg{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+/* css for parent login form */
+.parentlogin{
+    height: 50%;
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: center;
+}
+.parentlogin>form{
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+}
+.parentlogin>form>h3{
+    color: blueviolet;
+    margin-bottom: 20px;
+}
+.parentlogin>form>label{
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+.parentlogin>form>input{
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+.parentlogin>form>div{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.parentlogin>form>div>button{
+    padding: 0px 20px;
+    height: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+}
+.parentlogin>form>div>a{
+    text-decoration: none;
+}

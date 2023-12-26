@@ -1,0 +1,36 @@
+/* css for nav bar */
+.nav{
+    background-color: blueviolet;
+    height: 55px;
+    align-items: center;
+    color: white;
+    font-size: larger;
+    font-weight: 500;
+}
+.nav>button{
+    background: transparent;
+    border: none;
+    margin-right: 10px;
+}
+.nav>button>svg{
+    width: 45px;
+    height: 45px;
+}
+
+/* css for time table */
+.timeTable{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.timeTable>button{
+    background-color: transparent;
+    border-radius: 10px;
+    border: 3px solid blueviolet;
+    padding: 0px 20px;
+    height: 50px;
+    font-weight: 500;
+    font-size: large;
+    color: blueviolet;
+}

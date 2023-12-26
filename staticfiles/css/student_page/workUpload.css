@@ -1,0 +1,49 @@
+/* css for nav bar */
+.nav{
+    background-color: blueviolet;
+    height: 55px;
+    align-items: center;
+    color: white;
+    font-size: larger;
+    font-weight: 500;
+}
+.nav>button{
+    background: transparent;
+    border: none;
+    margin-right: 10px;
+}
+.nav>button>svg{
+    width: 45px;
+    height: 45px;
+}
+
+
+/* css for form */
+.form{
+    display: flex;
+    justify-content: center;
+}
+form{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+}
+form>label{
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+form>input{
+    height: 40px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+form>button{
+    border-radius: 10px;
+    height: 40px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+    margin-top: 5px;
+}
+

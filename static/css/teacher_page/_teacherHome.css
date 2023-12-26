@@ -1,0 +1,44 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* css for nav bar */
+.nav{
+    background-color: blueviolet;
+    height: 55px;
+    align-items: center;
+    color: white;
+    font-size: larger;
+    font-weight: 500;
+}
+.nav>span{
+    margin-left: 20px;
+}
+
+
+/* css for downBar */
+.downBar{
+    background-color: blueviolet;
+    height: 120px;
+    border-radius: 50px 50px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.downBar>span{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.downBar>span>button{
+    color: blueviolet;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0px 10px;
+    font-weight: bolder;
+    height: 40px;
+}

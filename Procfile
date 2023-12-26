@@ -1,0 +1,1 @@
+web: gunicorn BVS_School.wsgi --log-file -

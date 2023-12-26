@@ -1,0 +1,42 @@
+/* css for nav bar */
+.nav{
+    background-color: blueviolet;
+    height: 55px;
+    align-items: center;
+    color: white;
+    font-size: larger;
+    font-weight: 500;
+}
+.nav>button{
+    background: transparent;
+    border: none;
+    margin-right: 10px;
+}
+.nav>button>svg{
+    width: 45px;
+    height: 45px;
+}
+
+
+/* css for classes */
+.classes{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.classList{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+.classList button{
+    height: 50px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 3px solid blueviolet;
+    background-color: transparent;
+    font-size: larger;
+    font-weight: 500;
+    color: blueviolet;
+}

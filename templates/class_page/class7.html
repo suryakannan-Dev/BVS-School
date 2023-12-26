@@ -1,0 +1,87 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+
+{% block title %}
+    StudentWork | Class - 7
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/class_page/class.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="nav">
+    <button onclick="window.history.back()">
+        <svg viewBox="0 0 1024 1024" fill="#ffffff" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z" fill=""></path></g></svg>
+    </button>
+    <span>Class - 7</span>
+</div>
+
+<div class="searchBox">
+    <div>
+        <h4>Search for Student Work</h4>
+        <label for="subjectName">Subject Name</label>
+        <input type="text" name="subjectName" id="subject" placeholder="Subject Name">
+        
+        <label for="studentName">Student Name</label>
+        <input type="text" name="studentName" id="name" placeholder="Student Name">
+    </div>
+</div>
+
+<hr>
+
+<div class="studentWorkTable">
+    <h3>Student Works :</h3>
+    <div class="studentWork">
+        {% if studentWorks %}
+            {% for studentWork in studentWorks %}
+            <button onclick="addComment('{{studentWork.id}}')">
+                <div>
+                    <span class="studName">{{studentWork.studentName}}</span>
+                    <span class="subName">({{studentWork.subjectName}})</span>
+                    <span class="time">({{studentWork.uploaded_at}})</span>
+                </div>
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 7L15 12L10 17" stroke="#9100e9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </button>
+            {% endfor %}
+        {% else %}
+        <p>No Student work in this class</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/navigateTo.js' %}"></script>
+<script>
+    const subjectInput = document.getElementById("subject")
+    const nameInput = document.getElementById("name")
+
+    const studentWorkButtons = document.querySelectorAll('.studentWork button')
+
+    function filterStudentWorks() {
+        const subject_name = subjectInput.value.toLowerCase()
+        const student_name = nameInput.value.toLowerCase()
+
+        studentWorkButtons.forEach(button => {
+            const buttonText = button.querySelector('.subName').textContent.toLowerCase()
+            const studentText = button.querySelector('.studName').textContent.toLowerCase()
+
+            if ((subject_name && buttonText.includes(subject_name)) || !subject_name) {
+                if ((student_name && studentText.includes(student_name)) || !student_name) {
+                    button.style.display = 'flex'
+                } else {
+                    button.style.display = 'none'
+                }
+            } else {
+                button.style.display = 'none'
+            }
+        })
+    }
+
+    subjectInput.addEventListener("input", filterStudentWorks);
+    nameInput.addEventListener("input", filterStudentWorks);
+</script>
+{% endblock script %}

@@ -1,0 +1,60 @@
+{% extends 'layouts\main.html' %}
+{% load static %}
+
+
+{% block title %}
+    Student | MyWork
+{% endblock title %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css\student_page\studentWork.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+
+<div class="nav">
+    <button onclick="window.history.back()">
+        <svg viewBox="0 0 1024 1024" fill="#ffffff" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z" fill=""></path></g></svg>
+    </button>
+    <span>My Work</span>
+</div>
+
+<div class="uploadWork">
+    <div>
+        <span>Upload Work</span>
+        <button onclick="navigateTo('upload_work')">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18.5 20L18.5 14M18.5 14L21 16.5M18.5 14L16 16.5" stroke="#9100e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 19H5C3.89543 19 3 18.1046 3 17V7C3 5.89543 3.89543 5 5 5H9.58579C9.851 5 10.1054 5.10536 10.2929 5.29289L12 7H19C20.1046 7 21 7.89543 21 9V11" stroke="#9100e9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            click here to upload file
+        </button>
+    </div>
+</div>
+
+<div class="myWork">
+    <h3>My Works</h3>
+    <div>
+        {% for detail in details %}
+        {% if student.Student_Name == detail.studentName %}
+        <p>
+            <b>StudentName :</b> {{detail.studentName}} <br> 
+            <b>SubjectName :</b> {{detail.subjectName}} <br> 
+            <b>FileName :</b> {{detail.fileName}} <br>
+            <b>class :</b> {{detail.studentClass}} <br>
+            {% if detail.comment %}
+            <b>Marks :</b> {{detail.comment}}   <small>( {{detail.staffName}} )</small>
+            {% else %}
+            <b>Marks :</b> ----
+            {% endif %}
+        </p>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
+
+
+{% block script %}
+<script src="{% static 'js\navigateTo.js' %}"></script>
+{% endblock script %}

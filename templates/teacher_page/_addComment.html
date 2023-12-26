@@ -1,0 +1,44 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+
+{% block title %}
+    StudentWork | Add Comment
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/teacher_page/_addComment.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="nav">
+    <button onclick="window.history.back()">
+        <svg viewBox="0 0 1024 1024" fill="#ffffff" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M669.6 849.6c8.8 8 22.4 7.2 30.4-1.6s7.2-22.4-1.6-30.4l-309.6-280c-8-7.2-8-17.6 0-24.8l309.6-270.4c8.8-8 9.6-21.6 2.4-30.4-8-8.8-21.6-9.6-30.4-2.4L360.8 480.8c-27.2 24-28 64-0.8 88.8l309.6 280z" fill=""></path></g></svg>
+    </button>
+    <span>Student Work</span>
+</div>
+
+<div class="detailDiv">
+    <form action="http://127.0.0.1:3001/upload_comment/{{data.id}}" method="POST" class="details" autocomplete="off">
+        {% csrf_token %}
+        <span><b>Student Name :</b> {{data.studentName}}</span>
+        <span><b>Student Class :</b> {{data.studentClass}}</span>
+        <span><b>Student Id :</b> {{data.studentId}}</span>
+        <span><b>Subject Name :</b> {{data.subjectName}}</span>
+        <span><b>File Name :</b> {{data.fileName}}</span>
+        <span><b>File :</b> <a href="http://127.0.0.1:3001/uploads/{{data.file}}" target="_blank">{{data.file}}</a></span>
+
+        <label for="comment">Add Comment : </label>
+        <input type="text" name="comment" value="{{data.comment}}" placeholder="Add your comments">
+        <label for="staffName">Staff Commenting : </label>
+        <input type="text" name="staffName" value="{{teacher.Name}}" readonly>
+
+        <button type="submit">Add Comment</button>
+    </form>
+</div>
+
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/navigateTo.js' %}"></script>
+{% endblock script %}

@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../../../OneDrive/Desktop/WEB techonology/demo"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "assets",
+		"liveServer.settings.port": 5502
+	}
+}

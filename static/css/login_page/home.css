@@ -1,0 +1,56 @@
+/* css for top bar */
+.topBar{
+    background-color: blueviolet;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.topBar>img{
+    border: 2px solid;
+    height: 100px;
+    width: 100px;
+    margin: 10px 0px;
+}
+.topBar>h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* css for login buttons */
+.login{
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    margin-top: 70px;
+    justify-content: space-evenly;
+}
+.loginButton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.loginButton>button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    font-size:larger;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid blueviolet;
+    background: transparent;
+    color: blueviolet;
+    margin-bottom: 10px;
+    box-shadow:  2px 4px 10px 0 rgba(0, 0, 0, 0.3);
+}
+.loginButton>button>svg{
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+.loginButton>p{
+    font-size: small;
+}

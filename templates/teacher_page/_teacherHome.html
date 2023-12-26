@@ -1,0 +1,28 @@
+{% extends 'layouts/main.html' %}
+{% load static %}
+
+{% block title %}
+    Teacher | HomePage 
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/teacher_page/_teacherHome.css' %}">
+{% endblock css %}
+
+{% block content %}
+<div class="nav">
+    <span>{{ teacher.Name }}</span> 
+</div>
+
+<div class="downBar">
+    <span>
+        <button onclick="navigateTo('teacher_class')">My Class</button>
+        <button onclick="navigateTo('teacher_work')">Student Work</button>
+        <button onclick="navigateTo('teacher_profile')">My Profile</button>
+    </span>
+</div>
+{% endblock content %}
+
+{% block script %}
+<script src="{% static 'js/navigateTo.js' %}"></script>
+{% endblock script %}
